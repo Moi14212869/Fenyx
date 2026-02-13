@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fenyx Esport</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+
+    body {
+      background: linear-gradient(to bottom, #000000, #2a0000, #000000);
+      color: #ffffff;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      letter-spacing: 8px;
+      color: #ff6a00;
+      text-shadow: 0 0 20px rgba(255, 106, 0, 0.9);
+    }
+
+    header p {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #cccccc;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #ff6a00;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+
+    .about p {
+      line-height: 1.6;
+      color: #dddddd;
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: linear-gradient(to bottom, #3a0000, #000000);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 90, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .avatar {
+      height: 120px;
+      background: #111;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff6a00;
+    }
+
+    .recruit {
+      text-align: center;
+    }
+
+    .recruit button {
+      margin-top: 20px;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 30px;
+      background: #ff6a00;
+      color: #000;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 106, 0, 0.6);
+      transition: background 0.3s ease;
+    }
+
+    .recruit button:hover {
+      background: #ff8c1a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #888;
+      border-top: 1px solid rgba(255, 106, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FENYX</h1>
+  </header>
+
+  <section class="about">
+    <h2>🔥 À propos</h2>
+    <p>
+      Fenyx est une équipe e-sport Brawl Stars née dans le feu de la compétition.
+      Chaque défaite nous renforce, chaque victoire nous embrase davantage.
+    </p>
+  </section>
+
+  <section>
+    <h2>🔥 L'équipe</h2>
+    <div class="team">
+      <div class="card">
+        <div class="avatar">Player 1</div>
+        <h3>Player One</h3>
+      </div>
+      <div class="card">
+        <div class="avatar">Player 2</div>
+        <h3>Player Two</h3>
+      </div>
+      <div class="card">
+        <div class="avatar">Player 3</div>
+        <h3>Player Three</h3>
+      </div>
+    </div>
+  </section>
+  <footer>
+    © 2026 Fenyx Esport
+  </footer>
+
+</body>
+</html>
