@@ -23,7 +23,7 @@
     }
 
     header h1 {
-      font-size: 4rem;
+      font-size: clamp(2.5rem, 8vw, 4rem);
       letter-spacing: 8px;
       color: #ff6a00;
       text-shadow: 0 0 20px rgba(255, 106, 0, 0.9);
@@ -55,7 +55,7 @@
     .team {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      gap: 30px 20px;
     }
 
     .card {
@@ -64,11 +64,12 @@
       padding: 20px;
       text-align: center;
       box-shadow: 0 0 25px rgba(255, 90, 0, 0.4);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(255, 106, 0, 0.7);
     }
 
     .avatar {
@@ -80,6 +81,7 @@
       align-items: center;
       justify-content: center;
       color: #ff6a00;
+      font-weight: bold;
     }
 
     .image-section {
@@ -108,11 +110,12 @@
       font-size: 1rem;
       cursor: pointer;
       box-shadow: 0 0 20px rgba(255, 106, 0, 0.6);
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .recruit button:hover {
       background: #ff8c1a;
+      box-shadow: 0 0 25px rgba(255, 140, 26, 0.8);
     }
 
     footer {
@@ -121,23 +124,44 @@
       color: #888;
       border-top: 1px solid rgba(255, 106, 0, 0.3);
     }
+
+    .video-section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      color: #ff6a00;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 106, 0, 0.6);
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>FENYX</h1>
+    <p>L'équipe e-sport Brawl Stars</p>
   </header>
 
   <section class="about">
     <h2>🔥 À propos</h2>
     <p>
-      Fenyx est une équipe e-sport Brawl Stars
+      Fenyx est une équipe e-sport spécialisée sur Brawl Stars, compétitive et passionnée.
     </p>
   </section>
 
   <section class="image-section">
-    <img src="logo1.png" alt="Image de l'équipe Fenyx" />
+    <img src="logo1.png" alt="Logo de l'équipe e-sport Fenyx" />
   </section>
 
   <section>
@@ -155,9 +179,34 @@
       </div>
       <div class="card">
         <div class="avatar">Player 3</div>
-        <h3></h3>
-        <p>Main Kit</p></p>
+        <h3>NomDuJoueur3</h3>
+        <p>Main Kit</p>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔥 Remplaçants</h2>
+    <div class="team">
+      <div class="card">
+        <div class="avatar">Sub 1</div>
+        <h3>PlayerSub1</h3>
+        <p>Main Jessie</p>
+      </div>
+      <div class="card">
+        <div class="avatar">Sub 2</div>
+        <h3>PlayerSub2</h3>
+        <p>Main Brock</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <h2>🎮 Gameplay</h2>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/VIDÉO_ID" 
+        title="Gameplay Fenyx" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
     </div>
   </section>
   <footer>
