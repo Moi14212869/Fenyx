@@ -89,6 +89,30 @@
       font-weight: bold;
     }
 
+    .avatar {
+      height: 120px;
+      width: 120px;
+      background: #111;
+      border-radius: 15px;
+      margin: 0 auto 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .avatar img:hover {
+      transform: scale(1.1);
+    }
+
     .image-section {
       margin: 40px 0;
       text-align: center;
@@ -151,21 +175,27 @@
     <div class="team">
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/28289CL98J" target="_blank">
-          <div class="avatar">ikikrepus</div>
+          <div class="avatar">
+            <img src="pp1.png" alt="Avatar du joueur ikikrepus">
+          </div>
           <h3>FY | ikikrepus</h3>
           <p>Main Stu</p>
         </a>
       </div>
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/22989JGCUP" target="_blank">
-          <div class="avatar">Eliott14</div>
+          <div class="avatar">
+            <img src="pp2.webp" alt="Avatar du joueur Eliott14">
+          </div>
           <h3>FY | Eliott14</h3>
           <p>Main Colt</p>
         </a>
       </div>
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/2J2GRCGJJ9" target="_blank">
-          <div class="avatar">Alexcool56</div>
+          <div class="avatar">
+            <img src="pp2.webp" alt="Avatar du joueur Alexcool56">  
+          </div>
           <h3>FY | Alexcool56</h3>
           <p>Main Carl</p>
         </a>
@@ -178,7 +208,9 @@
     <div class="team">
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/2U9QYVQ9L2" target="_blank">
-          <div class="avatar">Max911</div>
+          <div class="avatar">
+            <img src="pp3.webp" alt="Avatar du joueur Max911">
+          </div>
           <h3>FY | Max911</h3>
           <p>Main Bo</p>
         </a>
