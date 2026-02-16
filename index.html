@@ -11,7 +11,32 @@
     body {
       background: linear-gradient(to bottom, #000000, #2a0000, #000000);
       color: #ffffff;
+      padding-top: 70px;
     }
+  .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.nav-container a {
+  color: #ff6a00;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-container a:hover {
+  color: #ffa500;
+}
 
     header {
       height: 100vh;
@@ -179,12 +204,21 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="#about">À propos</a>
+    <a href="#team">Équipe</a>
+    <a href="#subs">Remplaçants</a>
+    <a href="#gameplay">Gameplay</a>
+    <a href="#emote">Emote</a>
+  </div>
+</nav>
 
   <header>
     <h1>FENYX</h1>
   </header>
 
-  <section class="about">
+  <section class="about" id="about">
     <h2>🔥 À propos</h2>
     <p>
       Fenyx est une équipe e-sport spécialisée sur Brawl Stars, compétitive et passionnée.
@@ -195,7 +229,7 @@
     <img src="logo2.png" alt="Logo de l'équipe e-sport Fenyx" />
   </section>
 
-  <section>
+  <section id="team">
     <h2>🔥 L'équipe</h2>
     <div class="team">
       <div class="card">
@@ -228,7 +262,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="subs">
     <h2>🔥 Remplaçants</h2>
     <div class="team">
       <div class="card">
@@ -243,7 +277,7 @@
     </div>
   </section>
 
-  <section class="video-section">
+  <section class="video-section" id="gameplay">
   <h2>🎮 Gameplay</h2>
   <div class="video-wrapper">
     <video controls poster="poster.jpg" width="100%" height="auto" style="border-radius:20px; box-shadow:0 0 30px rgba(255,106,0,0.6);">
@@ -252,7 +286,7 @@
     </video>
   </div>
 </section>
-  <section class="emote-section">
+  <section class="emote-section" id="emote">
   <h2>😎 Emote Officielle</h2>
   <div class="emote-wrapper">
     <img src="poulet.png" alt="Emote officielle Fenyx : Poulet" />
