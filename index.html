@@ -441,19 +441,16 @@ const translations = {
 
 const languageSelect = document.getElementById("language-select");
 
-languageSelect.addEventListener("change", () => {
-  const lang = languageSelect.value;
-
-  // Traduire la navbar
-  const navLinks = document.querySelectorAll(".nav-container a");
-  navLinks.forEach(link => {
+function translatePage(lang) {
+  // Navbar
+  document.querySelectorAll(".nav-container a").forEach(link => {
     const key = link.getAttribute("href").replace("#", "");
     if(translations[lang].nav[key]){
       link.innerText = translations[lang].nav[key];
     }
   });
 
-  // Traduire les H2
+  // H2
   document.querySelector("#about h2").innerText = translations[lang].aboutH2;
   document.querySelector("#team h2").innerText = translations[lang].teamH2;
   document.querySelector("#subs h2").innerText = translations[lang].subsH2;
@@ -461,10 +458,10 @@ languageSelect.addEventListener("change", () => {
   document.querySelector("#gameplay h2").innerText = translations[lang].gameplayH2;
   document.querySelector("#emote h2").innerText = translations[lang].emoteH2;
 
-  // Traduire le texte à propos
+  // Texte à propos
   document.querySelector("#about p").innerText = translations[lang].aboutP;
 
-  // Traduire les rôles des joueurs et "Top Brawlers"
+  // Rôles joueurs et Top Brawlers
   document.querySelectorAll("#team .card, #subs .card, #staff .card").forEach(card => {
     const playerName = card.querySelector("h3").innerText;
     const roleP = card.querySelectorAll("p");
@@ -477,6 +474,19 @@ languageSelect.addEventListener("change", () => {
       }
     });
   });
+}
+
+// Détecter la langue du navigateur au chargement
+window.addEventListener("DOMContentLoaded", () => {
+  const browserLang = (navigator.language || navigator.userLanguage).split('-')[0];
+  const lang = browserLang === "en" ? "en" : "fr"; // anglais ou français par défaut
+  languageSelect.value = lang;
+  translatePage(lang);
+});
+
+// Détecter le changement via le selecteur
+languageSelect.addEventListener("change", () => {
+  translatePage(languageSelect.value);
 });
 </script>
 </body>
