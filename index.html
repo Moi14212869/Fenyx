@@ -129,7 +129,10 @@
       justify-content: center;
       overflow: hidden;
     }
-
+  .nav-container a.active {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+}
     .avatar img {
       width: 100%;
       height: 100%;
@@ -340,9 +343,27 @@
     <img src="poulet.png" alt="Emote officielle Fenyx : Poulet" />
   </div>
 </section>
+  
   <footer>
     © 2026 Fenyx Esport
   </footer>
 
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-container a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+    if(window.scrollY >= sectionTop) current = section.getAttribute("id");
+  });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if(link.getAttribute("href") === "#" + current) link.classList.add("active");
+  });
+});
+</script>
+  
 </body>
 </html>
