@@ -190,7 +190,19 @@
       margin: 50px auto;
       text-align: center;
     }
-
+.hover-info {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6a00;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.card { position: relative; }
     .emote-section h2 {
       color: #ff6a00;
       margin-bottom: 30px;
@@ -361,6 +373,19 @@ window.addEventListener("scroll", () => {
   navLinks.forEach(link => {
     link.classList.remove("active");
     if(link.getAttribute("href") === "#" + current) link.classList.add("active");
+  });
+});
+  const cards = document.querySelectorAll(".card");
+cards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+    const info = document.createElement("div");
+    info.className = "hover-info";
+    info.textContent = card.querySelector("h3").textContent + " - Top Brawlers: Colt, Gus, Griff";
+    card.appendChild(info);
+  });
+  card.addEventListener("mouseleave", () => {
+    const info = card.querySelector(".hover-info");
+    if(info) info.remove();
   });
 });
 </script>
