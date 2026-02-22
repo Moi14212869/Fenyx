@@ -391,32 +391,51 @@ images.forEach(img => {
   });
 });
 </script>
-  <script>
+<script>
 const translations = {
-  en: {
-    about: "Fenyx is an esports team specialized in Brawl Stars, competitive and passionate.",
-    team: "🔥 Team",
-    subs: "🔥 Substitutes",
-    staff: "🔥 Staff",
-    gameplay: "🎮 Gameplay",
-    emote: "😎 Official Emote",
-    // Joueurs (tu peux compléter si tu veux traduire les rôles)
-    "FY | ikikrepus": "Main Stu",
-    "FY | Eliott14": "Main Colt",
-    "FY | Alexcool56": "Main Carl",
-    "FY | Max911": "Main Bo"
-  },
   fr: {
-    about: "Fenyx est une équipe e-sport spécialisée sur Brawl Stars, compétitive et passionnée.",
-    team: "🔥 L'équipe",
-    subs: "🔥 Remplaçants",
-    staff: "🔥 Staff",
-    gameplay: "🎮 Gameplay",
-    emote: "😎 Emote Officielle",
+    nav: {
+      about: "À propos",
+      team: "Équipe",
+      subs: "Remplaçants",
+      staff: "Staff",
+      gameplay: "Gameplay",
+      emote: "Emote"
+    },
+    aboutH2: "🔥 À propos",
+    aboutP: "Fenyx est une équipe e-sport spécialisée sur Brawl Stars, compétitive et passionnée.",
+    teamH2: "🔥 L'équipe",
+    subsH2: "🔥 Remplaçants",
+    staffH2: "🔥 Staff",
+    gameplayH2: "🎮 Gameplay",
+    emoteH2: "😎 Emote Officielle",
     "FY | ikikrepus": "Main Stu",
     "FY | Eliott14": "Main Colt",
     "FY | Alexcool56": "Main Carl",
-    "FY | Max911": "Main Bo"
+    "FY | Max911": "Main Bo",
+    topBrawlers: "Top Brawlers :"
+  },
+  en: {
+    nav: {
+      about: "About",
+      team: "Team",
+      subs: "Substitutes",
+      staff: "Staff",
+      gameplay: "Gameplay",
+      emote: "Emote"
+    },
+    aboutH2: "🔥 About",
+    aboutP: "Fenyx is an esports team specialized in Brawl Stars, competitive and passionate.",
+    teamH2: "🔥 Team",
+    subsH2: "🔥 Substitutes",
+    staffH2: "🔥 Staff",
+    gameplayH2: "🎮 Gameplay",
+    emoteH2: "😎 Official Emote",
+    "FY | ikikrepus": "Main Stu",
+    "FY | Eliott14": "Main Colt",
+    "FY | Alexcool56": "Main Carl",
+    "FY | Max911": "Main Bo",
+    topBrawlers: "Top Brawlers:"
   }
 };
 
@@ -424,22 +443,39 @@ const languageSelect = document.getElementById("language-select");
 
 languageSelect.addEventListener("change", () => {
   const lang = languageSelect.value;
-  
-  // Changer le texte des sections principales
-  document.querySelector("#about p").innerText = translations[lang].about;
-  document.querySelector("#team h2").innerText = translations[lang].team;
-  document.querySelector("#subs h2").innerText = translations[lang].subs;
-  document.querySelector("#staff h2").innerText = translations[lang].staff;
-  document.querySelector("#gameplay h2").innerText = translations[lang].gameplay;
-  document.querySelector("#emote h2").innerText = translations[lang].emote;
-  
-  // Changer le texte des rôles des joueurs
+
+  // Traduire la navbar
+  const navLinks = document.querySelectorAll(".nav-container a");
+  navLinks.forEach(link => {
+    const key = link.getAttribute("href").replace("#", "");
+    if(translations[lang].nav[key]){
+      link.innerText = translations[lang].nav[key];
+    }
+  });
+
+  // Traduire les H2
+  document.querySelector("#about h2").innerText = translations[lang].aboutH2;
+  document.querySelector("#team h2").innerText = translations[lang].teamH2;
+  document.querySelector("#subs h2").innerText = translations[lang].subsH2;
+  document.querySelector("#staff h2").innerText = translations[lang].staffH2;
+  document.querySelector("#gameplay h2").innerText = translations[lang].gameplayH2;
+  document.querySelector("#emote h2").innerText = translations[lang].emoteH2;
+
+  // Traduire le texte à propos
+  document.querySelector("#about p").innerText = translations[lang].aboutP;
+
+  // Traduire les rôles des joueurs et "Top Brawlers"
   document.querySelectorAll("#team .card, #subs .card, #staff .card").forEach(card => {
     const playerName = card.querySelector("h3").innerText;
     const roleP = card.querySelectorAll("p");
     if(roleP.length > 0 && translations[lang][playerName]){
       roleP[0].innerText = translations[lang][playerName];
     }
+    roleP.forEach(p => {
+      if(p.innerText.includes("Top Brawlers") || p.innerText.includes("Top Brawlers :")){
+        p.innerText = translations[lang].topBrawlers;
+      }
+    });
   });
 });
 </script>
