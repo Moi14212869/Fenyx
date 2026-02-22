@@ -190,19 +190,6 @@
       margin: 50px auto;
       text-align: center;
     }
-.hover-info {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ff6a00;
-  color: #000;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
-.card { position: relative; }
     .emote-section h2 {
       color: #ff6a00;
       margin-bottom: 30px;
@@ -237,6 +224,17 @@
     .emote-wrapper img:hover {
       transform: scale(1.1);
     }
+    #overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+  cursor:pointer;
+}
   </style>
 </head>
 <body>
@@ -375,17 +373,14 @@ window.addEventListener("scroll", () => {
     if(link.getAttribute("href") === "#" + current) link.classList.add("active");
   });
 });
-  const cards = document.querySelectorAll(".card");
-cards.forEach(card => {
-  card.addEventListener("mouseenter", () => {
-    const info = document.createElement("div");
-    info.className = "hover-info";
-    info.textContent = card.querySelector("h3").textContent + " - Top Brawlers: Colt, Gus, Griff";
-    card.appendChild(info);
-  });
-  card.addEventListener("mouseleave", () => {
-    const info = card.querySelector(".hover-info");
-    if(info) info.remove();
+  const images = document.querySelectorAll(".emote-wrapper img, .image-section img");
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    const overlay = document.createElement("div");
+    overlay.id = "overlay";
+    overlay.innerHTML = `<img src="${img.src}" style="max-width:90%; max-height:90%; border-radius:20px;">`;
+    document.body.appendChild(overlay);
+    overlay.addEventListener("click", () => overlay.remove());
   });
 });
 </script>
