@@ -354,9 +354,16 @@
   </div>
 </section>
   
-  <footer>
-    © 2026 Fenyx Esport
-  </footer>
+<footer>
+  © 2026 Fenyx Esport
+  <div style="margin-top:10px;">
+    <label for="language-select" style="color:#ff6a00;">Langue :</label>
+    <select id="language-select" style="padding:5px; border-radius:5px; background:#111; color:#ff6a00; border:none;">
+      <option value="fr" selected>Français</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+</footer>
 
 <script>
 const sections = document.querySelectorAll("section");
@@ -384,6 +391,57 @@ images.forEach(img => {
   });
 });
 </script>
+  <script>
+const translations = {
+  en: {
+    about: "Fenyx is an esports team specialized in Brawl Stars, competitive and passionate.",
+    team: "🔥 Team",
+    subs: "🔥 Substitutes",
+    staff: "🔥 Staff",
+    gameplay: "🎮 Gameplay",
+    emote: "😎 Official Emote",
+    // Joueurs (tu peux compléter si tu veux traduire les rôles)
+    "FY | ikikrepus": "Main Stu",
+    "FY | Eliott14": "Main Colt",
+    "FY | Alexcool56": "Main Carl",
+    "FY | Max911": "Main Bo"
+  },
+  fr: {
+    about: "Fenyx est une équipe e-sport spécialisée sur Brawl Stars, compétitive et passionnée.",
+    team: "🔥 L'équipe",
+    subs: "🔥 Remplaçants",
+    staff: "🔥 Staff",
+    gameplay: "🎮 Gameplay",
+    emote: "😎 Emote Officielle",
+    "FY | ikikrepus": "Main Stu",
+    "FY | Eliott14": "Main Colt",
+    "FY | Alexcool56": "Main Carl",
+    "FY | Max911": "Main Bo"
+  }
+};
+
+const languageSelect = document.getElementById("language-select");
+
+languageSelect.addEventListener("change", () => {
+  const lang = languageSelect.value;
   
+  // Changer le texte des sections principales
+  document.querySelector("#about p").innerText = translations[lang].about;
+  document.querySelector("#team h2").innerText = translations[lang].team;
+  document.querySelector("#subs h2").innerText = translations[lang].subs;
+  document.querySelector("#staff h2").innerText = translations[lang].staff;
+  document.querySelector("#gameplay h2").innerText = translations[lang].gameplay;
+  document.querySelector("#emote h2").innerText = translations[lang].emote;
+  
+  // Changer le texte des rôles des joueurs
+  document.querySelectorAll("#team .card, #subs .card, #staff .card").forEach(card => {
+    const playerName = card.querySelector("h3").innerText;
+    const roleP = card.querySelectorAll("p");
+    if(roleP.length > 0 && translations[lang][playerName]){
+      roleP[0].innerText = translations[lang][playerName];
+    }
+  });
+});
+</script>
 </body>
 </html>
