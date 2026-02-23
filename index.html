@@ -290,33 +290,6 @@ window.addEventListener("DOMContentLoaded", () => {
   loadLanguage(browserLang);
 });
 </script>
-<script>
-window.addEventListener("DOMContentLoaded", () => {
-
-  const languageSelect = document.getElementById("language-select");
-
-  if (!languageSelect) return; // sécurité
-
-  // 🔁 Charger langue sauvegardée ou navigateur
-  const savedLang = localStorage.getItem("language");
-  const browserLang = (navigator.language || navigator.userLanguage)
-                        .split("-")[0]
-                        .toLowerCase();
-
-  const defaultLang = savedLang || (browserLang === "fr" ? "fr" : "en");
-
-  languageSelect.value = defaultLang;
-  loadLanguage(defaultLang);
-
-  // 🔁 Changement manuel
-  languageSelect.addEventListener("change", (e) => {
-    const selectedLang = e.target.value;
-    localStorage.setItem("language", selectedLang);
-    loadLanguage(selectedLang);
-  });
-
-});
-</script>
 <body>
   <nav class="navbar">
   <div class="nav-container">
@@ -449,13 +422,6 @@ window.addEventListener("DOMContentLoaded", () => {
   
 <footer>
   © 2026 Fenyx Esport
-  <div style="margin-top:10px;">
-    <label for="language-select" style="color:#ff6a00;">Langue :</label>
-    <select id="language-select" style="padding:5px; border-radius:5px; background:#111; color:#ff6a00; border:none;">
-      <option value="fr" selected>Français</option>
-      <option value="en">English</option>
-    </select>
-  </div>
 </footer>
 
 <script>
