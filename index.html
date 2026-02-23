@@ -291,25 +291,30 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script>
-const languageSelect = document.getElementById("language-select");
-
-// 🔁 Change la langue quand on sélectionne une option
-languageSelect.addEventListener("change", (e) => {
-  const selectedLang = e.target.value;
-  loadLanguage(selectedLang);
-});
-
-// 🌍 Met à jour le select selon la langue détectée au chargement
 window.addEventListener("DOMContentLoaded", () => {
+
+  const languageSelect = document.getElementById("language-select");
+
+  if (!languageSelect) return; // sécurité
+
+  // 🔁 Charger langue sauvegardée ou navigateur
+  const savedLang = localStorage.getItem("language");
   const browserLang = (navigator.language || navigator.userLanguage)
                         .split("-")[0]
                         .toLowerCase();
 
-  if (browserLang === "fr" || browserLang === "en") {
-    languageSelect.value = browserLang;
-  } else {
-    languageSelect.value = "en";
-  }
+  const defaultLang = savedLang || (browserLang === "fr" ? "fr" : "en");
+
+  languageSelect.value = defaultLang;
+  loadLanguage(defaultLang);
+
+  // 🔁 Changement manuel
+  languageSelect.addEventListener("change", (e) => {
+    const selectedLang = e.target.value;
+    localStorage.setItem("language", selectedLang);
+    loadLanguage(selectedLang);
+  });
+
 });
 </script>
 <body>
