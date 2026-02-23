@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "about": "概要",
+    "team": "チーム",
+    "subs": "控え選手",
+    "staff": "スタッフ",
+    "gameplay": "ゲームプレイ",
+    "emote": "エモート"
+  },
+  "aboutH2": "🔥 概要",
+  "aboutP": "FenyxはBrawl Starsに特化した、情熱的で競争力のあるeスポーツチームです。",
+  "teamH2": "🔥 チーム",
+  "subsH2": "🔥 控え選手",
+  "staffH2": "🔥 スタッフ",
+  "gameplayH2": "🎮 ゲームプレイ",
+  "emoteH2": "😎 公式エモート",
+  "topBrawlers": "トップブローラー:",
+
+  "alt": {
+    "logo": "Fenyx eスポーツチームのロゴ",
+    "ikikrepus": "ikikrepusのアバター、メインStuプレイヤー",
+    "eliott14": "Eliott14のアバター、メインColtプレイヤー",
+    "alexcool56": "Alexcool56のアバター、メインCarlプレイヤー",
+    "max911": "Max911のアバター、メインBoプレイヤー",
+    "coach": "ikikrepusのアバター、チームコーチ",
+    "manager": "Eliott14のアバター、チームマネージャー",
+    "emote": "Fenyx公式エモート：チキン"
+  }
+}
