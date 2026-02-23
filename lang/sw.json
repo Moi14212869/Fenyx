@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "about": "Kuhusu",
+    "team": "Timu",
+    "subs": "Wachezaji wa Akiba",
+    "staff": "Wafanyakazi",
+    "gameplay": "Uchezaji",
+    "emote": "Emote"
+  },
+  "aboutH2": "🔥 Kuhusu",
+  "aboutP": "Fenyx ni timu ya esports yenye ushindani na shauku, maalumu kwa Brawl Stars.",
+  "teamH2": "🔥 Timu",
+  "subsH2": "🔥 Wachezaji wa Akiba",
+  "staffH2": "🔥 Wafanyakazi",
+  "gameplayH2": "🎮 Uchezaji",
+  "emoteH2": "😎 Emote Rasmi",
+  "topBrawlers": "Wachezaji Bora:",
+
+  "alt": {
+    "logo": "Nembo ya timu ya esports ya Fenyx",
+    "ikikrepus": "Picha ya ikikrepus, mchezaji mkuu Stu",
+    "eliott14": "Picha ya Eliott14, mchezaji mkuu Colt",
+    "alexcool56": "Picha ya Alexcool56, mchezaji mkuu Carl",
+    "max911": "Picha ya Max911, mchezaji mkuu Bo",
+    "coach": "Picha ya ikikrepus, kocha wa timu",
+    "manager": "Picha ya Eliott14, meneja wa timu",
+    "emote": "Emote Rasmi ya Fenyx: Kuku"
+  }
+}
