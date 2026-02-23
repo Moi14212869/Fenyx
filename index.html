@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="">
 <head>
   <meta charset="UTF-8" />
   <meta name="description" content="Fenyx Esport : découvrez notre équipe compétitive sur Brawl Stars, suivez nos tournois, résultats et actualités esports.">
@@ -237,15 +237,63 @@
 }
   </style>
 </head>
+<script>
+async function loadLanguage(lang) {
+  try {
+    const response = await fetch(`lang/${lang}.json`);
+    if (!response.ok) throw new Error();
+
+    const translations = await response.json();
+
+    applyTranslations(translations);
+
+    // ✅ Met à jour <html lang="">
+    document.documentElement.lang = lang;
+
+  } catch {
+    // 🔥 Fallback automatique en anglais
+    if (lang !== "en") {
+      await loadLanguage("en");
+    }
+  }
+}
+
+function getNestedValue(obj, path) {
+  return path.split(".").reduce((acc, part) => acc && acc[part], obj);
+}
+
+function applyTranslations(translations) {
+
+  // Traduction du texte
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const value = getNestedValue(translations, el.dataset.i18n);
+    if (value) el.innerText = value;
+  });
+
+  // Traduction des ALT
+  document.querySelectorAll("[data-i18n-alt]").forEach(img => {
+    const value = getNestedValue(translations, img.dataset.i18nAlt);
+    if (value) img.alt = value;
+  });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const browserLang = (navigator.language || navigator.userLanguage)
+                        .split("-")[0]
+                        .toLowerCase();
+
+  loadLanguage(browserLang);
+});
+</script>
 <body>
   <nav class="navbar">
   <div class="nav-container">
-    <a href="#about">À propos</a>
-    <a href="#team">Équipe</a>
-    <a href="#subs">Remplaçants</a>
-    <a href="#staff">Staff</a>
-    <a href="#gameplay">Gameplay</a>
-    <a href="#emote">Emote</a>
+    <a href="#about" data-i18n="nav.about">À propos</a>
+    <a href="#team" data-i18n="nav.team">Équipe</a>
+    <a href="#subs" data-i18n="nav.subs">Remplaçants</a>
+    <a href="#staff" data-i18n="nav.staff">Staff</a>
+    <a href="#gameplay" data-i18n="nav.gameplay">Gameplay</a>
+    <a href="#emote" data-i18n="nav.emote">Emote</a>
   </div>
 </nav>
 
@@ -254,36 +302,37 @@
   </header>
 
   <section class="about" id="about">
-    <h2>🔥 À propos</h2>
-    <p>
+    <h2 data-i18n="aboutH2">🔥 À propos</h2>
+    <p data-i18n="aboutP">
       Fenyx est une équipe e-sport spécialisée sur Brawl Stars, compétitive et passionnée.
     </p>
   </section>
 
   <section class="image-section">
-    <img src="logo2.png" alt="Logo de l'équipe e-sport Fenyx" />
+    <img src="logo2.png" alt="Logo de l'équipe e-sport Fenyx" data-i18n-alt="alt.logo">
   </section>
 
   <section id="team">
-    <h2>🔥 L'équipe</h2>
+    <h2 data-i18n="teamH2">🔥 L'équipe</h2>
     <div class="team">
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/28289CL98J" target="_blank">
           <div class="avatar">
-            <img src="pp1.png" alt="Avatar du joueur ikikrepus">
+            <img src="pp1.png" alt="Avatar du joueur ikikrepus" data-i18n-alt="alt.ikikrepus">
           </div>
           <h3>FY | ikikrepus</h3>
           <p>Main Stu</p>
+          <p data-i18n="topBrawlers">Top Brawlers :</p>
         </a>
       </div>
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/22989JGCUP" target="_blank">
           <div class="avatar">
-            <img src="pp2.webp" alt="Avatar du joueur Eliott14">
+            <img src="pp2.webp" alt="Avatar du joueur Eliott14" data-i18n-alt="alt.eliott14">
           </div>
           <h3>FY | Eliott14</h3>
           <p>Main Colt</p>
-          <p>Top Brawlers :</p>
+          <p data-i18n="topBrawlers">Top Brawlers :</p>
           <div class="brawlers">
             <img src="colt.webp" alt="Colt">
             <img src="gus.webp" alt="Gus">
@@ -294,43 +343,45 @@
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/2J2GRCGJJ9" target="_blank">
           <div class="avatar">
-            <img src="pp2.webp" alt="Avatar du joueur Alexcool56">  
+            <img src="pp2.webp" alt="Avatar du joueur Alexcool56" data-i18n-alt="alt.alexcool56">  
           </div>
           <h3>FY | Alexcool56</h3>
           <p>Main Carl</p>
+          <p data-i18n="topBrawlers">Top Brawlers :</p>
         </a>
       </div>
     </div>
   </section>
 
   <section id="subs">
-    <h2>🔥 Remplaçants</h2>
+    <h2 data-i18n="subsH2">🔥 Remplaçants</h2>
     <div class="team">
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/2U9QYVQ9L2" target="_blank">
           <div class="avatar">
-            <img src="pp3.webp" alt="Avatar du joueur Max911">
+            <img src="pp3.webp" alt="Avatar du joueur Max911" data-i18n-alt="alt.max911">
           </div>
           <h3>FY | Max911</h3>
           <p>Main Bo</p>
+          <p data-i18n="topBrawlers">Top Brawlers :</p>
         </a>
       </div>
     </div>
   </section>
 
   <section id="staff">
-    <h2>🔥 Staff</h2>
+    <h2 data-i18n="staffH2">🔥 Staff</h2>
     <div class="team">
       <div class="card">
           <div class="avatar">
-            <img src="coach.png" alt="Avatar du coach ikikrepus">
+            <img src="coach.png" alt="Avatar du coach" data-i18n-alt="alt.coach">
           </div>
           <h3>FY | ikikrepus</h3>
           <p>Coach</p>
       </div>
       <div class="card">
           <div class="avatar">
-            <img src="manager.png" alt="Avatar du manager Eliott14">
+            <img src="manager.png" alt="Avatar du manager" data-i18n-alt="alt.manager">
           </div>
           <h3>FY | Eliott14</h3>
           <p>Manager</p>
@@ -339,7 +390,7 @@
   </section>
 
   <section class="video-section" id="gameplay">
-  <h2>🎮 Gameplay</h2>
+  <h2 data-i18n="gameplayH2">🎮 Gameplay</h2>
   <div class="video-wrapper">
     <video controls poster="poster.jpg" width="100%" height="auto" style="border-radius:20px; box-shadow:0 0 30px rgba(255,106,0,0.6);">
       <source src="gameplay.mp4" type="video/mp4">
@@ -348,9 +399,9 @@
   </div>
 </section>
   <section class="emote-section" id="emote">
-  <h2>😎 Emote Officielle</h2>
+  <h2 data-i18n="emoteH2">😎 Emote Officielle</h2>
   <div class="emote-wrapper">
-    <img src="poulet.png" alt="Emote officielle Fenyx : Poulet" />
+    <img src="poulet.png" alt="Emote officielle Fenyx : Poulet" data-i18n-alt="alt.emote">
   </div>
 </section>
   
