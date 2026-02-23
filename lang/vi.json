@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "about": "Về chúng tôi",
+    "team": "Đội",
+    "subs": "Dự bị",
+    "staff": "Nhân sự",
+    "gameplay": "Gameplay",
+    "emote": "Biểu tượng"
+  },
+  "aboutH2": "🔥 Về chúng tôi",
+  "aboutP": "Fenyx là đội esports chuyên nghiệp, đầy đam mê, chuyên về Brawl Stars.",
+  "teamH2": "🔥 Đội",
+  "subsH2": "🔥 Dự bị",
+  "staffH2": "🔥 Nhân sự",
+  "gameplayH2": "🎮 Gameplay",
+  "emoteH2": "😎 Biểu tượng chính thức",
+  "topBrawlers": "Top Brawlers:",
+
+  "alt": {
+    "logo": "Logo đội esports Fenyx",
+    "ikikrepus": "Avatar của ikikrepus, người chơi chính Stu",
+    "eliott14": "Avatar của Eliott14, người chơi chính Colt",
+    "alexcool56": "Avatar của Alexcool56, người chơi chính Carl",
+    "max911": "Avatar của Max911, người chơi chính Bo",
+    "coach": "Avatar của ikikrepus, huấn luyện viên đội",
+    "manager": "Avatar của Eliott14, quản lý đội",
+    "emote": "Biểu tượng chính thức Fenyx: Gà"
+  }
+}
