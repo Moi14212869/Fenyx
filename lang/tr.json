@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "about": "Hakkımızda",
+    "team": "Takım",
+    "subs": "Yedekler",
+    "staff": "Personel",
+    "gameplay": "Oynanış",
+    "emote": "Emote"
+  },
+  "aboutH2": "🔥 Hakkımızda",
+  "aboutP": "Fenyx, Brawl Stars’a özel rekabetçi ve tutkulu bir e-spor takımıdır.",
+  "teamH2": "🔥 Takım",
+  "subsH2": "🔥 Yedekler",
+  "staffH2": "🔥 Personel",
+  "gameplayH2": "🎮 Oynanış",
+  "emoteH2": "😎 Resmî Emote",
+  "topBrawlers": "En İyi Brawlers:",
+
+  "alt": {
+    "logo": "Fenyx e-spor takımı logosu",
+    "ikikrepus": "ikikrepus avatarı, Stu ana oyuncu",
+    "eliott14": "Eliott14 avatarı, Colt ana oyuncu",
+    "alexcool56": "Alexcool56 avatarı, Carl ana oyuncu",
+    "max911": "Max911 avatarı, Bo ana oyuncu",
+    "coach": "ikikrepus avatarı, takım koçu",
+    "manager": "Eliott14 avatarı, takım yöneticisi",
+    "emote": "Fenyx resmî emote: Tavuk"
+  }
+}
