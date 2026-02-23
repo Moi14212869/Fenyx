@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "about": "Meist",
+    "team": "Meeskond",
+    "subs": "Varumängijad",
+    "staff": "Personal",
+    "gameplay": "Mängimine",
+    "emote": "Emotikon"
+  },
+  "aboutH2": "🔥 Meist",
+  "aboutP": "Fenyx on konkurentsivõimeline ja kirglik Brawl Stars e-spordi meeskond.",
+  "teamH2": "🔥 Meeskond",
+  "subsH2": "🔥 Varumängijad",
+  "staffH2": "🔥 Personal",
+  "gameplayH2": "🎮 Mängimine",
+  "emoteH2": "😎 Ametlik emotikon",
+  "topBrawlers": "Parimad Brawlerid:",
+
+  "alt": {
+    "logo": "Fenyx e-spordi meeskonna logo",
+    "ikikrepus": "ikikrepus avatar, peamine Stu mängija",
+    "eliott14": "Eliott14 avatar, peamine Colt mängija",
+    "alexcool56": "Alexcool56 avatar, peamine Carl mängija",
+    "max911": "Max911 avatar, peamine Bo mängija",
+    "coach": "ikikrepus avatar, meeskonna treener",
+    "manager": "Eliott14 avatar, meeskonna manager",
+    "emote": "Fenyx ametlik emotikon: Kana"
+  }
+}
