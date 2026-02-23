@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "about": "O nas",
+    "team": "Zespół",
+    "subs": "Rezerwowi",
+    "staff": "Personel",
+    "gameplay": "Rozgrywka",
+    "emote": "Emote"
+  },
+  "aboutH2": "🔥 O nas",
+  "aboutP": "Fenyx to konkurencyjny i pełen pasji zespół e-sportowy specjalizujący się w Brawl Stars.",
+  "teamH2": "🔥 Zespół",
+  "subsH2": "🔥 Rezerwowi",
+  "staffH2": "🔥 Personel",
+  "gameplayH2": "🎮 Rozgrywka",
+  "emoteH2": "😎 Oficjalny Emote",
+  "topBrawlers": "Najlepsi Brawlers:",
+
+  "alt": {
+    "logo": "Logo zespołu e-sportowego Fenyx",
+    "ikikrepus": "Avatar ikikrepus, główny gracz Stu",
+    "eliott14": "Avatar Eliott14, główny gracz Colt",
+    "alexcool56": "Avatar Alexcool56, główny gracz Carl",
+    "max911": "Avatar Max911, główny gracz Bo",
+    "coach": "Avatar ikikrepus, trener zespołu",
+    "manager": "Avatar Eliott14, menedżer zespołu",
+    "emote": "Oficjalny emote Fenyx: Kurczak"
+  }
+}
