@@ -55,7 +55,36 @@
       align-items: center;
       text-align: center;
     }
+    .logo-extra {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
 
+    .logo-extra-box {
+      background: linear-gradient(145deg, #1a0000, #000000);
+      border: 1px solid rgba(255, 106, 0, 0.25);
+      box-shadow: 0 0 25px rgba(255, 106, 0, 0.25);
+      border-radius: 20px;
+      padding: 30px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo-extra-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 40px rgba(255, 106, 0, 0.6);
+    }
+
+    .logo-extra-box img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(255, 106, 0, 0.4));
+    }
     header h1 {
       font-size: clamp(2.5rem, 8vw, 4rem);
       letter-spacing: 8px;
@@ -279,6 +308,11 @@
 </nav>
 
   <header>
+    <section class="logo-extra">
+  <div class="logo-extra-box">
+    <img src="https://moi14212869.github.io/Fenyx/logo1.png" alt="Logo de Fenyx">
+  </div>
+</section>
     <h1>FENYX</h1>
   </header>
 
