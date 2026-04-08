@@ -242,63 +242,15 @@
 }
   </style>
 </head>
-<script>
-async function loadLanguage(lang) {
-  try {
-    const response = await fetch(`lang/${lang}.json`);
-    if (!response.ok) throw new Error();
-
-    const translations = await response.json();
-
-    applyTranslations(translations);
-
-    // ✅ Met à jour <html lang="">
-    document.documentElement.lang = lang;
-
-  } catch {
-    // 🔥 Fallback automatique en anglais
-    if (lang !== "en") {
-      await loadLanguage("en");
-    }
-  }
-}
-
-function getNestedValue(obj, path) {
-  return path.split(".").reduce((acc, part) => acc && acc[part], obj);
-}
-
-function applyTranslations(translations) {
-
-  // Traduction du texte
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const value = getNestedValue(translations, el.dataset.i18n);
-    if (value) el.innerText = value;
-  });
-
-  // Traduction des ALT
-  document.querySelectorAll("[data-i18n-alt]").forEach(img => {
-    const value = getNestedValue(translations, img.dataset.i18nAlt);
-    if (value) img.alt = value;
-  });
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  const browserLang = (navigator.language || navigator.userLanguage)
-                        .split("-")[0]
-                        .toLowerCase();
-
-  loadLanguage(browserLang);
-});
-</script>
 <body>
   <nav class="navbar">
   <div class="nav-container">
-    <a href="#about" data-i18n="nav.about">À propos</a>
-    <a href="#team" data-i18n="nav.team">Équipe</a>
-    <a href="#subs" data-i18n="nav.subs">Remplaçants</a>
-    <a href="#staff" data-i18n="nav.staff">Staff</a>
-    <a href="#gameplay" data-i18n="nav.gameplay">Gameplay</a>
-    <a href="#emote" data-i18n="nav.emote">Emote</a>
+    <a href="#about">À propos</a>
+    <a href="#team">Équipe</a>
+    <a href="#subs">Remplaçants</a>
+    <a href="#staff">Staff</a>
+    <a href="#gameplay">Gameplay</a>
+    <a href="#emote">Emote</a>
   </div>
 </nav>
 
@@ -307,27 +259,27 @@ window.addEventListener("DOMContentLoaded", () => {
   </header>
 
   <section class="about" id="about">
-    <h2 data-i18n="aboutH2">🔥 À propos</h2>
-    <p data-i18n="aboutP">
+    <h2>🔥 À propos</h2>
+    <p>
       Fenyx est une équipe e-sport spécialisée sur Brawl Stars, compétitive et passionnée.
     </p>
   </section>
 
   <section class="image-section">
-    <img src="logo2.png" alt="Logo de l'équipe e-sport Fenyx" data-i18n-alt="alt.logo">
+    <img src="logo2.png" alt="Logo de l'équipe e-sport Fenyx">
   </section>
 
   <section id="team">
-    <h2 data-i18n="teamH2">🔥 L'équipe</h2>
+    <h2>🔥 L'équipe</h2>
     <div class="team">
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/28289CL98J" target="_blank">
           <div class="avatar">
-            <img src="pp1.png" alt="Avatar du joueur ikikrepus" data-i18n-alt="alt.ikikrepus">
+            <img src="pp1.png" alt="Avatar du joueur ikikrepus">
           </div>
           <h3>FY | ikikrepus</h3>
           <p>Main Stu</p>
-          <p data-i18n="topBrawlers">Top Brawlers :</p>
+          <p>Top Brawlers :</p>
           <div class="brawlers">
             <img src="16000045.webp" alt="stu">
             <img src="carl.webp" alt="Carl">
@@ -338,11 +290,11 @@ window.addEventListener("DOMContentLoaded", () => {
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/22989JGCUP" target="_blank">
           <div class="avatar">
-            <img src="pp2.webp" alt="Avatar du joueur Eliott14" data-i18n-alt="alt.eliott14">
+            <img src="pp2.webp" alt="Avatar du joueur Eliott14">
           </div>
           <h3>FY | Eliott14</h3>
           <p>Main Colt</p>
-          <p data-i18n="topBrawlers">Top Brawlers :</p>
+          <p>Top Brawlers :</p>
           <div class="brawlers">
             <img src="colt.webp" alt="Colt">
             <img src="gus.webp" alt="Gus">
@@ -353,11 +305,11 @@ window.addEventListener("DOMContentLoaded", () => {
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/2J2GRCGJJ9" target="_blank">
           <div class="avatar">
-            <img src="pp4.jpeg" alt="Avatar du joueur Alexcool56" data-i18n-alt="alt.alexcool56">  
+            <img src="pp4.jpeg" alt="Avatar du joueur Alexcool56">  
           </div>
           <h3>FY | Alexcool56</h3>
           <p>Main Carl</p>
-          <p data-i18n="topBrawlers">Top Brawlers :</p>
+          <p></p>Top Brawlers :</p>
           <div class="brawlers">
             <img src="kit.webp" alt="Kit">
             <img src="carl.webp" alt="Carl">
@@ -369,16 +321,16 @@ window.addEventListener("DOMContentLoaded", () => {
   </section>
 
   <section id="subs">
-    <h2 data-i18n="subsH2">🔥 Remplaçants</h2>
+    <h2>🔥 Remplaçants</h2>
     <div class="team">
       <div class="card">
         <a href="https://brawlfr.fr/stats/player/2U9QYVQ9L2" target="_blank">
           <div class="avatar">
-            <img src="https://cdn.brawlify.com/profile-icons/regular/28000482.png" alt="Avatar du joueur Max911" data-i18n-alt="alt.max911">
+            <img src="https://cdn.brawlify.com/profile-icons/regular/28000482.png" alt="Avatar du joueur Max911">
           </div>
           <h3>FY | Max911</h3>
           <p>Main Bo</p>
-          <p data-i18n="topBrawlers">Top Brawlers :</p>
+          <p>Top Brawlers :</p>
           <div class="brawlers">
             <img src="bo.webp" alt="Bo">
             <img src="16000004.webp" alt="Rico">
@@ -390,18 +342,18 @@ window.addEventListener("DOMContentLoaded", () => {
   </section>
 
   <section id="staff">
-    <h2 data-i18n="staffH2">🔥 Staff</h2>
+    <h2>🔥 Staff</h2>
     <div class="team">
       <div class="card">
           <div class="avatar">
-            <img src="drafter.png" alt="Avatar du coach" data-i18n-alt="alt.coach">
+            <img src="drafter.png" alt="Avatar du coach">
           </div>
           <h3>FY | ikikrepus</h3>
           <p>Drafter</p>
       </div>
       <div class="card">
           <div class="avatar">
-            <img src="manager.png" alt="Avatar du manager" data-i18n-alt="alt.manager">
+            <img src="manager.png" alt="Avatar du manager">
           </div>
           <h3>FY | Eliott14</h3>
           <p>Manager</p>
@@ -419,9 +371,9 @@ window.addEventListener("DOMContentLoaded", () => {
   </div>
 </section>
   <section class="emote-section" id="emote">
-  <h2 data-i18n="emoteH2">😎 Emote Officielle</h2>
+  <h2>😎 Emote Officielle</h2>
   <div class="emote-wrapper">
-    <img src="poulet.png" alt="Emote officielle Fenyx : Poulet" data-i18n-alt="alt.emote">
+    <img src="poulet.png" alt="Emote officielle Fenyx : Poulet">
   </div>
 </section>
   
@@ -429,31 +381,5 @@ window.addEventListener("DOMContentLoaded", () => {
   © 2026 Fenyx Esport           site développé par <a href="https://moi14212869.github.io/onelevel">oneLevel studio</a>
 </footer>
 
-<script>
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-container a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 80;
-    if(window.scrollY >= sectionTop) current = section.getAttribute("id");
-  });
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if(link.getAttribute("href") === "#" + current) link.classList.add("active");
-  });
-});
-  const images = document.querySelectorAll(".emote-wrapper img, .image-section img");
-images.forEach(img => {
-  img.addEventListener("click", () => {
-    const overlay = document.createElement("div");
-    overlay.id = "overlay";
-    overlay.innerHTML = `<img src="${img.src}" style="max-width:90%; max-height:90%; border-radius:20px;">`;
-    document.body.appendChild(overlay);
-    overlay.addEventListener("click", () => overlay.remove());
-  });
-});
-</script>
 </body>
 </html>
