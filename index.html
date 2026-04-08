@@ -46,7 +46,10 @@
 .nav-container a:hover {
   color: #ffa500;
 }
-
+#logo2 {
+      display: flex;
+      justify-content: center;
+}
     header {
       height: 100vh;
       display: flex;
@@ -290,6 +293,10 @@
   z-index:2000;
   cursor:pointer;
 }
+    #imglogo2 {
+        height: 800px;
+        width: auto;
+    }
   </style>
 </head>
 <body>
@@ -324,7 +331,9 @@
   </section>
 
   <section class="image-section">
-    <img src="logo2.png" alt="Logo de l'équipe e-sport Fenyx">
+    <div id="logo2">
+      <img src="logo2.png" id=imglogo2" alt="Logo de l'équipe e-sport Fenyx">
+    </div>
   </section>
 
   <section id="team">
