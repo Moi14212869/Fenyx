@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /blogue/admin.html
+Disallow: /academie/postuler.html
+Disallow: /academie/merci.html
+
+Allow: /
+
+Sitemap: https://moi14212869.github.io/Fenyx/sitemap.xml
