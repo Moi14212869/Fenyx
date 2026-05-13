@@ -80,7 +80,88 @@
       transform: scale(1.03);
       box-shadow: 0 0 40px rgba(255, 106, 0, 0.6);
     }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
 
+.nav-container-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+/* LOGO */
+.logo {
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* NAV DESKTOP */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-container a {
+  color: #ff6a00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-container a:hover {
+  color: #ffa500;
+}
+
+/* MENU BUTTON (mobile) */
+.menu-btn {
+  display: none;
+  font-size: 30px;
+  color: #ff6a00;
+  cursor: pointer;
+}
+
+/* ACTIVE LINK */
+.nav-container a.active {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+    display: none;
+    text-align: center;
+  }
+
+  .nav-container.show {
+    display: flex;
+  }
+}
     .logo-extra-box img {
       max-width: 220px;
       width: 100%;
@@ -186,28 +267,7 @@
       margin: 40px 0;
       text-align: center;
     }
-.nav-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
 
-.logo {
-  height: 45px;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.1);
-}
-
-.logo-link {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
     .image-section img {
       max-width: 100%;
       height: auto;
@@ -300,18 +360,25 @@
   </style>
 </head>
 <body>
-  <nav class="navbar">
-  <div class="nav-container">
+<nav class="navbar">
+  <div class="nav-container-wrapper">
+
     <a href="#top" class="logo-link">
       <img src="logo2.png" alt="Fenyx Esport" class="logo">
     </a>
-    <a href="#about">À propos</a>
-    <a href="#team">Équipe</a>
-    <a href="#subs">Remplaçants</a>
-    <a href="#staff">Staff</a>
-    <a href="#gameplay">Gameplay</a>
-    <a href="#emote">Emote</a>
-    <a href="./academie/">Académie</a>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-container" id="navMenu">
+      <a href="#about">À propos</a>
+      <a href="#team">Équipe</a>
+      <a href="#subs">Remplaçants</a>
+      <a href="#staff">Staff</a>
+      <a href="#gameplay">Gameplay</a>
+      <a href="#emote">Emote</a>
+      <a href="./academie/">Académie</a>
+    </div>
+
   </div>
 </nav>
 
@@ -451,6 +518,10 @@
 <footer>
   © 2026 Fenyx Esport           site développé par <a href="https://moi14212869.github.io/onelevel">oneLevel studio</a>
 </footer>
-
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
 </body>
 </html>
