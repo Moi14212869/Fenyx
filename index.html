@@ -11,6 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://moi14212869.github.io/Fenyx/">
   <link rel="icon" href="logo2.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <title>Fenyx Esport</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
@@ -274,7 +275,75 @@
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(255, 106, 0, 0.6);
     }
+/* ---------- Réseaux sociaux ---------- */
 
+.social-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.social-section h2 {
+    color: #ff6a00;
+    margin-bottom: 35px;
+    font-size: 2.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 30px;
+    background: linear-gradient(to bottom, #3a0000, #000000);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 18px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(255,106,0,.35);
+    transition: all .3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 0 30px rgba(255,106,0,.7);
+    color: #ff6a00;
+}
+
+.social-links i {
+    font-size: 32px;
+}
+
+.fa-instagram {
+    color: #E1306C;
+}
+
+.fa-youtube {
+    color: #FF0000;
+}
+
+.social-links a:hover .fa-instagram,
+.social-links a:hover .fa-youtube {
+    color: #ff6a00;
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links a {
+        width: 260px;
+        justify-content: center;
+    }
+}
     footer {
       text-align: center;
       padding: 30px;
@@ -450,7 +519,7 @@
           <p>Rôle : DPS</p>
           <p>Top Brawlers :</p>
           <div class="brawlers">
-            <img src="barley.webp" alt="Bartaba">
+            <img src="8bit.webp" alt="Arkad">
             <img src="carl.webp" alt="Carl">
             <img src="16000045.webp" alt="Stu">
           </div>
@@ -515,7 +584,25 @@
     <img src="poulet.png" alt="Emote officielle Fenyx : Poulet">
   </div>
 </section>
-  
+
+<section class="social-section" id="social">
+  <h2>📱 Retrouvez-nous</h2>
+
+  <div class="social-links">
+
+    <a href="https://www.instagram.com/fenyx_esport_bs/" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-instagram"></i>
+      <span>Instagram</span>
+    </a>
+
+    <a href="https://youtube.com/@FenyxEsport-g5g" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-youtube"></i>
+      <span>YouTube</span>
+    </a>
+
+  </div>
+</section>
+
 <footer>
   © 2026 Fenyx Esport           site développé par <a href="https://moi14212869.github.io/onelevel">oneLevel studio</a>
 </footer>
